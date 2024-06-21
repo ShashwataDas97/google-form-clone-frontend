@@ -253,3 +253,19 @@
 2. **Run the Windows App :**
    - Build and run the Visual Basic project in Visual Studio.
    - Test each functionality (View Submissions, Create New Submission, and Keyboard Shortcuts).
+
+### Images :
+
+**Main Form Image :**
+
+![Slidely_Main_Form](https://github.com/ShashwataDas97/google-form-clone-frontend/assets/142168847/b6901e6d-9144-492b-b71c-7fa018820872)
+
+**Create Submission Form Image :**
+
+![Slidely_Create_Submission_Form](https://github.com/ShashwataDas97/google-form-clone-frontend/assets/142168847/005ca4eb-97f6-4fbe-8b2f-2a2c894598f7)
+
+**View Submissions Form Image :**
+
+![Slidely_View_Submissions_Form](https://github.com/ShashwataDas97/google-form-clone-frontend/assets/142168847/8eddb8bf-1a20-41e4-af90-7c1e03e238ff)
+
+
