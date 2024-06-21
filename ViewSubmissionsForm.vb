@@ -14,11 +14,13 @@ Public Class ViewSubmissionsForm
         LoadSubmissionsAsync()
     End Sub
 
+    ' Asynchronous method to load submissions
     Private Async Sub LoadSubmissionsAsync()
         Await LoadSubmissions()
         DisplaySubmission()
     End Sub
 
+    ' Asynchronous function to fetch submissions from the server
     Private Async Function LoadSubmissions() As Task
         Try
             Using client As New HttpClient()
@@ -40,6 +42,7 @@ Public Class ViewSubmissionsForm
         End Try
     End Function
 
+    ' Method to display the current submission
     Private Sub DisplaySubmission()
         If submissions.Count > 0 AndAlso currentIndex >= 0 AndAlso currentIndex < submissions.Count Then
             Dim submission As Submission = submissions(currentIndex)
@@ -57,6 +60,7 @@ Public Class ViewSubmissionsForm
         End If
     End Sub
 
+    ' Event handler for the "Previous" button click
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnPrevious.Click
         'MessageBox.Show("Previous button working successfully")
         If currentIndex > 0 Then
@@ -65,6 +69,7 @@ Public Class ViewSubmissionsForm
         End If
     End Sub
 
+    ' Event handler for the "Next" button click
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         'MessageBox.Show("Next button working successfully")
         If currentIndex < submissions.Count - 1 Then
@@ -73,6 +78,7 @@ Public Class ViewSubmissionsForm
         End If
     End Sub
 
+    ' Override method to process custom keyboard shortcuts
     Protected Overrides Function ProcessCmdKey(ByRef msg As Message, keyData As Keys) As Boolean
         If keyData = (Keys.Control Or Keys.P) Then
             btnPrevious.PerformClick()

@@ -12,6 +12,7 @@ Public Class CreateSubmissionForm
         stopwatchRunning = False
     End Sub
 
+    ' Event handler for the stopwatch toggle button
     Private Sub btnToggleStopwatch_Click(sender As Object, e As EventArgs) Handles btnToggleStopwatch.Click
         If stopwatchRunning Then
             stopwatch.Stop()
@@ -21,10 +22,12 @@ Public Class CreateSubmissionForm
         stopwatchRunning = Not stopwatchRunning
     End Sub
 
+    ' Event handler for the timer tick
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         txtStopwatchTime.Text = stopwatch.Elapsed.ToString("hh\:mm\:ss")
     End Sub
 
+    ' Event handler for the submit button
     Private Async Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         ' Create a new submission object
         Dim submission As New Submission() With {
@@ -61,6 +64,7 @@ Public Class CreateSubmissionForm
         End Using
     End Sub
 
+    ' Method to reset the form
     Private Sub ResetForm()
         ' Clear the input fields
         txtName.Clear()
@@ -75,6 +79,7 @@ Public Class CreateSubmissionForm
         txtStopwatchTime.Text = "00:00:00"
     End Sub
 
+    ' Override method to process custom keyboard shortcuts
     Protected Overrides Function ProcessCmdKey(ByRef msg As Message, keyData As Keys) As Boolean
         If keyData = (Keys.Control Or Keys.S) Then
             btnSubmit.PerformClick()
